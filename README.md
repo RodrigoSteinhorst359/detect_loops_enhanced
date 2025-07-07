@@ -18,11 +18,11 @@ sudo yum install fping nmap curl bc traceroute
 ### Download
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/loop-detector-enhanced.git
+git clone https://github.com/RodrigoSteinhorst359/loop-detector-enhanced.git
 cd loop-detector-enhanced
 
 # Ou baixe diretamente
-wget https://raw.githubusercontent.com/seu-usuario/loop-detector-enhanced/main/detect_loops_enhanced.sh
+wget https://raw.githubusercontent.com/RodrigoSteinhorst359/loop-detector-enhanced/main/detect_loops_enhanced.sh
 chmod +x detect_loops_enhanced.sh
 ```
 
