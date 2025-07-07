@@ -165,28 +165,7 @@ O relatório HTML inclui:
 10 8 * * * cd /path/to/script && ./detect_loops_enhanced.sh 172.16.0.0/12
 ```
 
-### Systemd Service
-```ini
-# /etc/systemd/system/loop-detector.service
-[Unit]
-Description=Network Loop Detector
-After=network.target
 
-[Service]
-Type=oneshot
-User=monitoring
-WorkingDirectory=/opt/loop-detector
-ExecStart=/opt/loop-detector/detect_loops_enhanced.sh 192.168.1.0/24
-
-[Install]
-WantedBy=multi-user.target
-```
-
-```bash
-# Ativar serviço
-sudo systemctl enable loop-detector.service
-sudo systemctl start loop-detector.service
-```
 
 ## 🔧 Casos de Uso
 
@@ -257,19 +236,6 @@ Erro: CIDR inválido. Use o formato IP/MASK (ex: 192.168.1.0/24)
 sudo ./detect_loops_enhanced.sh 192.168.1.0/24
 ```
 
-## 📂 Estrutura de Arquivos
-
-```
-loop-detector-enhanced/
-├── detect_loops_enhanced.sh    # Script principal
-├── README.md                   # Este arquivo
-├── LICENSE                     # Licença MIT
-└── examples/
-    ├── cron-examples.txt       # Exemplos de cron jobs
-    ├── systemd-service.txt     # Exemplo de serviço
-    └── multi-network.sh        # Script para múltiplas redes
-```
-
 ## 🎯 Performance
 
 | Rede | IPs | Tempo Estimado | Memória |
@@ -287,17 +253,6 @@ loop-detector-enhanced/
 - **Network timeouts**: Redes lentas podem aumentar o tempo
 - **Large networks**: Redes /16 ou maiores podem demorar horas
 
-## 🤝 Contribuição
-
-1. Fork o projeto
-2. Crie uma branch (`git checkout -b feature/nova-funcionalidade`)
-3. Commit suas mudanças (`git commit -am 'Adiciona nova funcionalidade'`)
-4. Push para a branch (`git push origin feature/nova-funcionalidade`)
-5. Abra um Pull Request
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para detalhes.
 
 ## 🙏 Créditos
 
@@ -305,26 +260,8 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para de
 - **Chart.js**: Gráficos interativos no HTML
 - **Telegram Bot API**: Integração de notificações
 
-## 📞 Suporte
 
-- 🐛 **Issues**: [GitHub Issues](https://github.com/seu-usuario/loop-detector-enhanced/issues)
-- 💬 **Discussões**: [GitHub Discussions](https://github.com/seu-usuario/loop-detector-enhanced/discussions)
-- 📧 **Email**: seu-email@exemplo.com
 
-## 🔮 Roadmap
-
-### v2.1 (Próxima versão)
-- [ ] Suporte a IPv6
-- [ ] Base de dados SQLite para histórico
-- [ ] Dashboard web em tempo real
-- [ ] API REST
-- [ ] Integração Slack/Discord
-
-### v2.2 (Futuro)
-- [ ] Machine learning para predição
-- [ ] Correção automática de problemas
-- [ ] Integração com Nagios/Zabbix
-- [ ] Aplicativo mobile
 
 ---
 
@@ -332,6 +269,6 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para de
 
 **⭐ Se este projeto foi útil, deixe uma estrela! ⭐**
 
-Made with ❤️ for network administrators
+
 
 </div>
